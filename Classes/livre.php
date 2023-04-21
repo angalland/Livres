@@ -1,6 +1,6 @@
 <?php
 
-class Livres {
+class Livre {
 
     // Arguments
 
@@ -19,6 +19,7 @@ class Livres {
         $this->_anneeParution = new Datetime($anneeParution);
         $this->_prix = $prix;
         $this->_auteur = $auteur;
+        $this->_auteur->addLivre($this);
     }
 
     // Getter et Setter
@@ -78,14 +79,5 @@ class Livres {
     public function getInfos(){
         return $this." a été écris par ".$this->_auteur;
     }
-
-    public function afficherBibliographie() {
-        $result = "<h1>Livres de ".$this->_auteur."</h1></br></br>"
-        .$this." (".$this->getAnneeParution()->format("Y").") : ".$this->getNbPages()." pages / ".$this->getPrix()." €";
-      
-        return $result;    
-        
-        }
-
 
 }
