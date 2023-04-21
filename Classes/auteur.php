@@ -5,6 +5,8 @@ class Auteur {
     // Arguments
     private string $_nom;
     private string $_prenom;
+
+   
     
     // constructeur 
 
@@ -21,6 +23,7 @@ class Auteur {
 
     public function setNom() : string {
         $this->_nom = $nom;
+        return $this;
     }
 
     public function getPrenom() : string {
@@ -29,9 +32,17 @@ class Auteur {
 
     public function setPrenom() : string {
         $this->_prenom = $prenom;
+        return $this;
     }
 
+
+
     public function __toString() : string {
-        return $this->_prenom . $this->_nom;
+        return $this->_prenom." ".$this->_nom;
     }
+
+    
 }
+
+
+

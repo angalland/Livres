@@ -8,3 +8,18 @@ complète d’un auteur :</p>
 
 <h2>Resultat</h2>
 
+<?php
+
+spl_autoload_register(function($class_name){
+    require_once 'Classes/'. $class_name .'.php';
+});
+
+$ecrivain1 = new Auteur ("King", "Stephen");
+
+// echo $ecrivain1;
+
+$roman1 = new Livres ("CA", 1138,"21-12-1986", 20, $ecrivain1);
+
+// echo $roman1;
+
+echo $roman1->afficherBibliographie();
